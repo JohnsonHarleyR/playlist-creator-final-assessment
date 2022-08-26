@@ -1,23 +1,18 @@
-
 @font-face {
-  font-family: 'Rubik';
-  src: url('../../fonts/Rubik/Rubik-Regular.ttf');
+  font-family: "Rubik";
+  src: url("../../fonts/Rubik/Rubik-Regular.ttf");
 }
-
 @font-face {
-  font-family: 'Rajdhani';
-  src: url('../../fonts/Rajdhani/Rajdhani-Regular.ttf');
+  font-family: "Rajdhani";
+  src: url("../../fonts/Rajdhani/Rajdhani-Regular.ttf");
 }
-
 :root {
   --primary-main: hsl(271, 0%, 20%);
   --primary-light: hsl(271, 0%, 50%);
   --primary-dark: hsl(271, 100%, 3%);
-
   --secondary-main: hsl(271, 100%, 50%);
   --secondary-light: hsl(271, 100%, 67%);
   --secondary-dark: hsl(271, 100%, 30%);
-
   --accent-main: hsl(188, 100%, 50%);
   --accent-light: hsl(188, 100%, 84%);
   --accent-dark: hsl(188, 100%, 33%);
@@ -31,13 +26,14 @@ body, html {
 }
 
 body {
-  font-family: 'Rubik';
-  color: '#fff';
-
-  .app-container {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+  font-family: "Rubik";
+  color: "#fff";
 }
+body .app-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*# sourceMappingURL=theme.css.map */
