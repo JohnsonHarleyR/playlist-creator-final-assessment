@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import AreaBox from '../../common/components/AreaBox';
+import ListBox from '../../common/components/ListBox';
 
 const PlaylistCreator = ({
   songs,
@@ -12,9 +13,21 @@ const PlaylistCreator = ({
       <div className='title-div'>
         <h1>Playlist Creator</h1>
       </div>
-      <div className='area-div'>
+      <div className='area-div creator'>
         <AreaBox>
-          Ummm
+          <div className='left-side'>
+            <ListBox 
+              title="song list"
+              leftOrRight={'right'}
+            />
+          </div>
+          <div className='middle'></div>
+          <div className='right-side'>
+          <ListBox 
+              title="play list"
+              leftOrRight={'left'}
+            />
+          </div>
         </AreaBox>
       </div>
 

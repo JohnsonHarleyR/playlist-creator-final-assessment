@@ -8,7 +8,9 @@
   --accent-main: hsl(271, 100%, 50%);
   --accent-light: hsl(271, 100%, 67%);
   --accent-dark: hsl(271, 100%, 30%);
-  --area-box-increment: 20ch;
+  --area-box-increment: 16.5ch;
+  --list-box-increment: 6ch;
+  --list-box-width: calc(var(--list-box-increment) * 3.5);
 }
 
 body, html {
@@ -38,6 +40,10 @@ body .app-container .creator-container {
   align-items: center;
   position: relative;
 }
+body .app-container .creator-container.inside {
+  margin-top: 1ch;
+  width: 100%;
+}
 body .app-container .creator-container .title-div {
   position: absolute;
   color: var(--secondary-light);
@@ -47,11 +53,53 @@ body .app-container .creator-container .title-div {
 body .app-container .creator-container .area-div {
   padding-top: 3.5ch;
 }
+body .app-container .creator-container .area-div.creator .left-side, body .app-container .creator-container .area-div.creator .middle, body .app-container .creator-container .area-div.creator .right-side {
+  height: 100%;
+}
+body .app-container .creator-container .area-div.creator .left-side, body .app-container .creator-container .area-div.creator .right-side {
+  width: 40%;
+}
+body .app-container .creator-container .area-div.creator .middle {
+  width: 20%;
+}
+body .app-container .creator-container .area-div.inside {
+  width: 100%;
+  display: flex;
+  position: relative;
+  margin-top: 1.2ch;
+}
+body .app-container .creator-container .area-div.inside.right {
+  justify-content: right;
+}
+body .app-container .creator-container .area-div.inside.left {
+  justify-content: left;
+}
+body .app-container .creator-container .area-div.inside .title-div.inside {
+  text-align: left;
+  text-align: left;
+  position: absolute;
+  width: var(--list-box-width);
+  padding: 0;
+  top: -1ch;
+  font-weight: bold;
+  font-size: 2ch;
+}
+body .app-container .creator-container .area-div.inside .title-div.inside.right {
+  right: -4ch;
+}
+body .app-container .creator-container .list-box {
+  border: 3px solid var(--secondary-main);
+  justify-self: right;
+  width: var(--list-box-width);
+  height: calc(var(--list-box-increment) * 5);
+  background-color: var(--primary-main);
+}
 body .app-container .area-box {
-  width: calc(4 * var(--area-box-increment));
-  height: calc(2.5 * var(--area-box-increment));
+  width: calc(5 * var(--area-box-increment));
+  height: calc(3 * var(--area-box-increment));
   border: 5px solid var(--secondary-main);
   background-color: var(--secondary-dark);
+  display: flex;
 }
 
 @font-face {
