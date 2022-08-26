@@ -4,6 +4,7 @@ import Container from '@mui/material/Container';
 import { ThemeProvider } from '@mui/material/styles';
 import { createTheme} from "@mui/material/styles";
 import Palette from './theme/constants/palette';
+import PlaylistCreator from './pages/PlaylistCreator';
 
 function App() {
 
@@ -32,10 +33,10 @@ function App() {
         sx={{
           'background-color': Palette.primary.main,
           color: '#fff',
-          border: `5px solid ${Palette.accent.main}`,
+          border: `5px solid ${Palette.secondary.main}`,
         }}
       >
-        Ummm
+        <PlaylistCreator />
       </Container>
 </ThemeProvider>
 

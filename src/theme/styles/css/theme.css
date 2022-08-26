@@ -1,21 +1,14 @@
-@font-face {
-  font-family: "Rubik";
-  src: url("../../fonts/Rubik/Rubik-Regular.ttf");
-}
-@font-face {
-  font-family: "Rajdhani";
-  src: url("../../fonts/Rajdhani/Rajdhani-Regular.ttf");
-}
 :root {
   --primary-main: hsl(271, 0%, 20%);
   --primary-light: hsl(271, 0%, 50%);
   --primary-dark: hsl(271, 100%, 3%);
-  --secondary-main: hsl(271, 100%, 50%);
-  --secondary-light: hsl(271, 100%, 67%);
-  --secondary-dark: hsl(271, 100%, 30%);
-  --accent-main: hsl(188, 100%, 50%);
-  --accent-light: hsl(188, 100%, 84%);
-  --accent-dark: hsl(188, 100%, 33%);
+  --secondary-main: hsl(188, 100%, 50%);
+  --secondary-light: hsl(188, 100%, 84%);
+  --secondary-dark: hsl(188, 100%, 33%);
+  --accent-main: hsl(271, 100%, 50%);
+  --accent-light: hsl(271, 100%, 67%);
+  --accent-dark: hsl(271, 100%, 30%);
+  --area-box-increment: 20ch;
 }
 
 body, html {
@@ -29,11 +22,53 @@ body {
   font-family: "Rubik";
   color: "#fff";
 }
+body h1, body h2, body h3, body h4, body h5, body h6 {
+  font-family: "Indie Flower";
+}
 body .app-container {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+body .app-container .creator-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+}
+body .app-container .creator-container .title-div {
+  position: absolute;
+  color: var(--secondary-light);
+  font-size: larger;
+  top: -2.45ch;
+}
+body .app-container .creator-container .area-div {
+  padding-top: 3.5ch;
+}
+body .app-container .area-box {
+  width: calc(4 * var(--area-box-increment));
+  height: calc(2.5 * var(--area-box-increment));
+  border: 5px solid var(--secondary-main);
+  background-color: var(--secondary-dark);
+}
+
+@font-face {
+  font-family: "Rubik";
+  src: url("../../fonts/Rubik/Rubik-Regular.ttf");
+}
+@font-face {
+  font-family: "Rajdhani";
+  src: url("../../fonts/Rajdhani/Rajdhani-Regular.ttf");
+}
+@font-face {
+  font-family: "Indie Flower";
+  src: url("../../fonts/IndieFlower/IndieFlower-Regular.ttf");
+}
+@font-face {
+  font-family: "Satisfy";
+  src: url("../../fonts/Satisfy/Satisfy-Regular.ttf");
 }
 
 /*# sourceMappingURL=theme.css.map */

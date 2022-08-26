@@ -15,15 +15,15 @@ const Palette = {
     contrastText: '#fff',
   },
   secondary: {
-    main: 'hsl(271, 100%, 50%)',
-    light: 'hsl(271, 100%, 67%)',
-    dark: 'hsl(271, 100%, 30%)',
-    contrastText: '#fff',
-  },
-  accent: {
     main: 'hsl(188, 100%, 50%)',
     light: 'hsl(188, 100%, 72%)',
     dark: 'hsl(188, 100%, 84%)',
+    contrastText: '#fff',
+  },
+  accent: {
+    main: 'hsl(271, 100%, 50%)',
+    light: 'hsl(271, 100%, 67%)',
+    dark: 'hsl(271, 100%, 30%)',
     contrastText: '#fff',
   },
 
@@ -46,10 +46,10 @@ const Palette = {
     contrastText: '#fff',
   },
   success: {
-    main: 'hsl(153, 100%, 50%)',
-    light: 'hsl(153, 100%, 75%)',
-    dark: 'hsl(153, 100%, 35%)',
-    contrastText: 'hsl(271, 100%, 30%)',
+    main: 'hsl(271, 100%, 50%)',
+    light: 'hsl(271, 100%, 67%)',
+    dark: 'hsl(271, 100%, 30%)',
+    contrastText: '#fff',
   },
 };
 
