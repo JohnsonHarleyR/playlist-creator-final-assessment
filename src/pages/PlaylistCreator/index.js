@@ -18,14 +18,18 @@ const PlaylistCreator = ({
           <div className='left-side'>
             <ListBox 
               title="song list"
-              leftOrRight={'right'}
+              leftOrRight='right'
+              itemPropName='title'
+              items={songs}
             />
           </div>
           <div className='middle'></div>
           <div className='right-side'>
           <ListBox 
               title="play list"
-              leftOrRight={'left'}
+              leftOrRight='left'
+              itemPropName='title'
+              items={playList}
             />
           </div>
         </AreaBox>

@@ -1,15 +1,19 @@
 :root {
   --primary-main: hsl(271, 0%, 20%);
-  --primary-light: hsl(271, 0%, 50%);
+  --primary-light: hsl(271, 0%, 35%);
   --primary-dark: hsl(271, 100%, 3%);
 
   --secondary-main: hsl(188, 100%, 50%);
   --secondary-light: hsl(188, 100%, 84%);
   --secondary-dark: hsl(188, 100%, 33%);
 
-  --accent-main: hsl(271, 100%, 50%);
-  --accent-light: hsl(271, 100%, 67%);
-  --accent-dark: hsl(271, 100%, 30%);
+  // --accent-main: hsl(271, 100%, 50%);
+  // --accent-light: hsl(271, 100%, 67%);
+  // --accent-dark: hsl(271, 100%, 30%);
+
+  --accent-main: hsl(274, 75%, 51%);
+  --accent-light: hsl(274, 100%, 70%);
+  --accent-dark: hsl(274, 100%, 38%);
 
   --area-box-increment: 16.5ch;
   --list-box-increment: 6ch;
@@ -26,6 +30,25 @@ body, html {
 body {
   font-family: 'Rubik';
   color: '#fff';
+
+  ::-webkit-scrollbar {
+    width: 1.2ch;
+  }
+
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+    background-color: var(--secondary-light);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--accent-main);
+    border-radius: 10px;
+
+    &:hover {
+      background: var(--accent-dark);
+    }
+  }
 
   h1,h2,h3,h4,h5,h6 {
     font-family: 'Indie Flower';
@@ -116,6 +139,14 @@ body {
         width: var(--list-box-width);
         height: calc(var(--list-box-increment) * 5);
         background-color: var(--primary-main);
+        overflow-y: scroll;
+
+        .list-item {
+          // background: var(--primary-light);
+          &.even {
+            background: var(--primary-light);
+          }
+        }
       }
 
 

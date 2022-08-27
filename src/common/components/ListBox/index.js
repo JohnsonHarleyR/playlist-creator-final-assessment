@@ -1,11 +1,36 @@
-import Box from '@mui/material/Box';
+import List from '@mui/material/List';
+import { useEffect, useState } from 'react';
+import MyListItem from './MyListItem';
 
 const ListBox = ({
   title,
   items,
+  itemPropName,
   setSelected,
   leftOrRight,
 }) => {
+
+  const [listItems, setListItems] = useState([]);
+  const [selectedIndex, setSelectedIndex] = useState(null);
+
+  useEffect(() => {
+    if (items) {
+      let newItems = [];
+      items.forEach((item, i) => {
+        newItems.push(
+          <MyListItem 
+            key={`${title}-item-${i}`}
+            index={i}
+            selectedIndex={selectedIndex}
+            itemText={item[itemPropName]}
+            itemId={item.id}
+            setSelected={setSelected}
+        />
+        );
+      });
+      setListItems(newItems);
+    }
+  }, [items]);
 
   return (
     <div className='creator-container inside'>
@@ -13,9 +38,9 @@ const ListBox = ({
       <div className={`title-div inside ${leftOrRight}`}>
         <h3>{title}</h3>
       </div>
-        <Box className='list-box'>
-          Ummm
-        </Box>
+        <List className='list-box'>
+          {listItems}
+        </List>
       </div>
 
     </div>

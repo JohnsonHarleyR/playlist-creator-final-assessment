@@ -27,11 +27,10 @@ function App() {
 <Container
         className="app-container"
         maxWidth={false}
-        maxHeight={false}
         width={'100%'}
         display={'flex'}
         sx={{
-          'background-color': Palette.primary.main,
+          backgroundColor: Palette.primary.main,
           color: '#fff',
           border: `5px solid ${Palette.secondary.main}`,
         }}
