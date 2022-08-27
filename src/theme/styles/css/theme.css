@@ -88,7 +88,7 @@ body .app-container .creator-container .area-div.creator .middle {
   text-align: center;
   align-self: flex-start;
   height: 32ch;
-  margin-top: 5.8ch;
+  margin-top: 3.91ch;
 }
 body .app-container .creator-container .area-div.creator .middle .my-button {
   margin: 0.5ch 0;
@@ -151,7 +151,7 @@ body .app-container .creator-container .list-box .list-item.selected-even {
 }
 body .app-container .area-box {
   width: calc(5 * var(--area-box-increment));
-  height: calc(3.2 * var(--area-box-increment));
+  height: calc(3.1 * var(--area-box-increment));
   border: 5px solid var(--secondary-main);
   background-color: var(--secondary-dark);
   display: flex;
