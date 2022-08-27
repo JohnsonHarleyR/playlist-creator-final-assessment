@@ -1,8 +1,7 @@
 import { AllSongs } from "../resource/music"
 
-export const getAllSongs = () => {
-  let copy = [...AllSongs];
-  copy.sort(function(a,b) {
+export const sortSongs = (songs) => {
+  songs.sort(function(a,b) {
     let songA = a.title.toUpperCase();
     let songB = b.title.toUpperCase();
     return songA < songB
@@ -11,11 +10,11 @@ export const getAllSongs = () => {
         ? 1
         : 0;
   });
+}
 
-  let songs = [];
-  copy.forEach((s, i) => {
-    songs.push({id: `s${i + 1}`, ...s});
-  });
+export const getAllSongs = () => {
+  let copy = [...AllSongs];
+  sortSongs(copy);
   
-  return songs;
+  return copy;
 }

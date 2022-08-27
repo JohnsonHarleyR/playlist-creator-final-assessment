@@ -13,6 +13,7 @@ const PlaylistCreator = ({
   playList,
   selectItemByIndex,
   addItemToPlayList,
+  removeItemFromList,
 }) => {
 
 
@@ -42,6 +43,7 @@ const PlaylistCreator = ({
               </MyButton>
               <MyButton
                 text="Remove"
+                handleClick={() => {removeItemFromList(selectedIndex, selectedList)}}
               >
               </MyButton>
             </div>
@@ -75,6 +77,7 @@ const mapStateToProps = ({music}) => {
 const mapDispatchToProps = {
   selectItemByIndex: MusicThunks.selectItemByIndex,
   addItemToPlayList: MusicThunks.addItemToPlayList,
+  removeItemFromList: MusicThunks.removeItemFromList,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(PlaylistCreator);
