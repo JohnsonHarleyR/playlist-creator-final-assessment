@@ -1,40 +1,39 @@
 import List from '@mui/material/List';
 import { useEffect, useState } from 'react';
+import { MusicList } from '../../../theme/constants/music';
 import MyListItem from './MyListItem';
 
 const ListBox = ({
-  title,
+  listType,
+  selectedList,
   items,
   itemPropName,
-  selectedId,
+  selectedIndex,
   setSelected,
-  leftOrRight,
 }) => {
 
+  const [title, setTitle] = useState();
+  const [position, setPosition] = useState();
   const [listItems, setListItems] = useState([]);
-  // const [selectedIndex, setSelectedIndex] = useState(null);
 
-  // useEffect(() => {
-  //   if (selectedId !== undefined) {
-  //     if (selectedId === null && selectedIndex !== null) {
-  //       setSelectedIndex(null);
-  //     } else {
-  //       for (let i = 0; i < items.length; i++) {
-  //         if (selectedId === items[i].id) {
-  //           if (selectedIndex !== i) {
-  //             setSelectedIndex(i);
-  //           }
-  //           break;
-  //         }
-  //       }
-  //     }
-  //   }
-  // }, [selectedId]);
-
-  // const selectItem = (index) => {
-  //   let id = items[index].id;
-  //   setSelected(id);
-  // }
+  useEffect(() => {
+    if (listType) {
+      switch(listType) {
+        default:
+          setTitle('');
+          setPosition('center');
+          break;
+        case MusicList.SONG_LIST:
+          setTitle('song list');
+          setPosition('left');
+          break;
+        case MusicList.PLAY_LIST:
+          setTitle('play list');
+          setPosition('right');
+          break;
+      }
+    }
+  }, [listType]);
 
   useEffect(() => {
     if (items) {
@@ -45,20 +44,21 @@ const ListBox = ({
             key={`${title}-item-${i}`}
             index={i}
             itemText={item[itemPropName]}
-            itemId={item.id}
+            listType={listType}
             setSelected={setSelected}
-            selectedId={selectedId}
+            selectedIndex={selectedIndex}
+            selectedList={selectedList}
         />
         );
       });
       setListItems(newItems);
     }
-  }, [items, selectedId]);
+  }, [items, selectedIndex, listType, selectedList]);
 
   return (
     <div className='creator-container inside'>
-      <div className={`area-div inside ${leftOrRight}`}>
-      <div className={`title-div inside ${leftOrRight}`}>
+      <div className={`area-div inside ${position}`}>
+      <div className={`title-div inside ${position}`}>
         <h3>{title}</h3>
       </div>
         <List className='list-box'>

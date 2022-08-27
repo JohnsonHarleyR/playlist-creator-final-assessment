@@ -3,9 +3,10 @@ import { useEffect, useState } from 'react';
 
 const MyListItem = ({
   index,
-  selectedId,
+  selectedIndex,
   itemText,
-  itemId,
+  listType,
+  selectedList,
   setSelected,
 }) => {
 
@@ -14,10 +15,10 @@ const MyListItem = ({
   const [className, setClassName] = useState('list-item');
 
   useEffect(() => {
-    let selected = itemId === selectedId;
-    console.log(`selected? ${itemId} = ${selectedId}? ${selected}`)
+    let selected = index === selectedIndex && 
+      listType === selectedList;
     setIsSelected(selected);
-  },[selectedId]);
+  },[index, selectedIndex, selectedList, listType]);
 
   useEffect(() => {
     if (index !== undefined) {
@@ -38,7 +39,7 @@ const MyListItem = ({
   },[isEven, isSelected]);
 
   const handleClick = () => {
-    setSelected(itemId);
+    setSelected(index, listType);
   }
 
   return (

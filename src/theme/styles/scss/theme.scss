@@ -4,12 +4,8 @@
   --primary-dark: hsl(271, 100%, 3%);
 
   --secondary-main: hsl(188, 100%, 50%);
-  --secondary-light: hsl(188, 100%, 84%);
+  --secondary-light: hsl(188, 100%, 90%);
   --secondary-dark: hsl(188, 100%, 33%);
-
-  // --accent-main: hsl(271, 100%, 50%);
-  // --accent-light: hsl(271, 100%, 67%);
-  // --accent-dark: hsl(271, 100%, 30%);
 
   --accent-main: hsl(274, 75%, 51%);
   --accent-light: hsl(274, 100%, 70%);
@@ -133,11 +129,11 @@ body {
           position: relative;
           margin-top: 1.2ch;
 
-          &.right {
+          &.left {
             justify-content: right;
           }
 
-          &.left {
+          &.right {
             justify-content: left;
           }
 
@@ -152,8 +148,9 @@ body {
               font-weight: bold;
               font-size: 2ch;
               z-index: 10;
+              height: 2ch;
 
-              &.right {
+              &.left {
                 right: -4ch;
               }
     

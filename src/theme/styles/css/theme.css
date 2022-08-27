@@ -3,7 +3,7 @@
   --primary-light: hsl(271, 0%, 35%);
   --primary-dark: hsl(271, 100%, 3%);
   --secondary-main: hsl(188, 100%, 50%);
-  --secondary-light: hsl(188, 100%, 84%);
+  --secondary-light: hsl(188, 100%, 90%);
   --secondary-dark: hsl(188, 100%, 33%);
   --accent-main: hsl(274, 75%, 51%);
   --accent-light: hsl(274, 100%, 70%);
@@ -106,10 +106,10 @@ body .app-container .creator-container .area-div.inside {
   position: relative;
   margin-top: 1.2ch;
 }
-body .app-container .creator-container .area-div.inside.right {
+body .app-container .creator-container .area-div.inside.left {
   justify-content: right;
 }
-body .app-container .creator-container .area-div.inside.left {
+body .app-container .creator-container .area-div.inside.right {
   justify-content: left;
 }
 body .app-container .creator-container .area-div.inside .title-div.inside {
@@ -122,8 +122,9 @@ body .app-container .creator-container .area-div.inside .title-div.inside {
   font-weight: bold;
   font-size: 2ch;
   z-index: 10;
+  height: 2ch;
 }
-body .app-container .creator-container .area-div.inside .title-div.inside.right {
+body .app-container .creator-container .area-div.inside .title-div.inside.left {
   right: -4ch;
 }
 body .app-container .creator-container .list-box {

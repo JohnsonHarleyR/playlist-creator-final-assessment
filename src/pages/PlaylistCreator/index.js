@@ -4,12 +4,15 @@ import ListBox from '../../common/components/ListBox';
 import MyButton from '../../common/components/MyButton';
 import { MusicThunks } from './redux';
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
+import { MusicList } from '../../theme/constants/music';
 
 const PlaylistCreator = ({
-  selectedId,
+  selectedIndex,
+  selectedList,
   songs,
   playList,
-  selectItemById,
+  selectItemByIndex,
+  addItemToPlayList,
 }) => {
 
 
@@ -22,18 +25,19 @@ const PlaylistCreator = ({
         <AreaBox>
           <div className='left-side'>
             <ListBox 
-              title="song list"
-              leftOrRight='right'
+              listType={MusicList.SONG_LIST}
               itemPropName='title'
               items={songs}
-              selectedId={selectedId}
-              setSelected={selectItemById}
+              selectedIndex={selectedIndex}
+              selectedList={selectedList}
+              setSelected={selectItemByIndex}
             />
           </div>
           <div className='middle'>
             <div className='buttons'>
               <MyButton
                 text={<><span className='add-text'>Add to list</span><ArrowRightAltIcon /></>}
+                handleClick={() => {addItemToPlayList(selectedIndex, selectedList)}}
               >
               </MyButton>
               <MyButton
@@ -44,12 +48,12 @@ const PlaylistCreator = ({
           </div>
           <div className='right-side'>
           <ListBox 
-              title="play list"
-              leftOrRight='left'
+              listType={MusicList.PLAY_LIST}
+              selectedList={selectedList}
               itemPropName='title'
               items={playList}
-              selectedId={selectedId}
-              setSelected={selectItemById}
+              selectedIndex={selectedIndex}
+              setSelected={selectItemByIndex}
             />
           </div>
         </AreaBox>
@@ -61,14 +65,16 @@ const PlaylistCreator = ({
 
 const mapStateToProps = ({music}) => {
   return {
-    selectedId: music.selectedId,
+    selectedIndex: music.selectedIndex,
+    selectedList: music.selectedList,
     songs: music.songList,
     playList: music.playList,
   };
 }
 
 const mapDispatchToProps = {
-  selectItemById: MusicThunks.selectItemById,
+  selectItemByIndex: MusicThunks.selectItemByIndex,
+  addItemToPlayList: MusicThunks.addItemToPlayList,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(PlaylistCreator);
