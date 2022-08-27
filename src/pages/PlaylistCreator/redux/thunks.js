@@ -49,6 +49,11 @@ export const removeItemFromList = (index, listType) => async(
       dispatch(actions.updatePlayList(playList));
       dispatch(actions.updateSongList(allSongs));
     }
+  // eslint-disable-next-line no-restricted-globals
+  } else if (confirm("Are you sure you want to remove this song?")) {
+    allSongs.splice(index, 1);
+    dispatch(actions.deselect());
+    dispatch(actions.updateSongList(allSongs));
   }
 
 }
