@@ -7,7 +7,9 @@
   --secondary-dark: hsl(188, 100%, 33%);
   --accent-main: hsl(274, 75%, 51%);
   --accent-light: hsl(274, 100%, 70%);
+  --accent-md-light: hsl(274, 100%, 63%);
   --accent-dark: hsl(274, 100%, 38%);
+  --accent-extra-dark: hsl(274, 100%, 29%);
   --area-box-increment: 16.5ch;
   --list-box-increment: 6ch;
   --list-box-width: calc(var(--list-box-increment) * 3.5);
@@ -48,6 +50,9 @@ body .app-container {
   justify-content: center;
   align-items: center;
 }
+body .app-container .my-button .add-text {
+  padding-right: 3px;
+}
 body .app-container .creator-container {
   display: flex;
   flex-direction: column;
@@ -63,10 +68,10 @@ body .app-container .creator-container .title-div {
   position: absolute;
   color: var(--secondary-light);
   font-size: larger;
-  top: -2.45ch;
+  top: -4ch;
 }
 body .app-container .creator-container .area-div {
-  padding-top: 3.5ch;
+  padding-top: 1.7ch;
 }
 body .app-container .creator-container .area-div.creator .left-side, body .app-container .creator-container .area-div.creator .middle, body .app-container .creator-container .area-div.creator .right-side {
   height: 100%;
@@ -76,6 +81,24 @@ body .app-container .creator-container .area-div.creator .left-side, body .app-c
 }
 body .app-container .creator-container .area-div.creator .middle {
   width: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  align-self: flex-start;
+  height: 32ch;
+  margin-top: 5.8ch;
+}
+body .app-container .creator-container .area-div.creator .middle .my-button {
+  margin: 0.5ch 0;
+  width: 14.5ch;
+  height: 4.75ch;
+  font-family: "Rubik";
+  font-size: 1.5ch;
+  text-transform: capitalize;
+  background: var(--accent-dark);
+  border-radius: 10px;
 }
 body .app-container .creator-container .area-div.inside {
   width: 100%;
@@ -95,9 +118,10 @@ body .app-container .creator-container .area-div.inside .title-div.inside {
   position: absolute;
   width: var(--list-box-width);
   padding: 0;
-  top: -1ch;
+  top: -2.4ch;
   font-weight: bold;
   font-size: 2ch;
+  z-index: 10;
 }
 body .app-container .creator-container .area-div.inside .title-div.inside.right {
   right: -4ch;
@@ -109,13 +133,25 @@ body .app-container .creator-container .list-box {
   height: calc(var(--list-box-increment) * 5);
   background-color: var(--primary-main);
   overflow-y: scroll;
+  position: relative;
+  z-index: 3;
+}
+body .app-container .creator-container .list-box .list-item {
+  position: relative;
+  z-index: 5;
 }
 body .app-container .creator-container .list-box .list-item.even {
   background: var(--primary-light);
 }
+body .app-container .creator-container .list-box .list-item.selected {
+  background: var(--accent-extra-dark);
+}
+body .app-container .creator-container .list-box .list-item.selected-even {
+  background: var(--accent-md-light);
+}
 body .app-container .area-box {
   width: calc(5 * var(--area-box-increment));
-  height: calc(3 * var(--area-box-increment));
+  height: calc(3.2 * var(--area-box-increment));
   border: 5px solid var(--secondary-main);
   background-color: var(--secondary-dark);
   display: flex;

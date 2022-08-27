@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 
 const MyListItem = ({
   index,
-  selectedIndex,
+  selectedId,
   itemText,
   itemId,
   setSelected,
@@ -14,8 +14,10 @@ const MyListItem = ({
   const [className, setClassName] = useState('list-item');
 
   useEffect(() => {
-    setIsSelected(index === selectedIndex);
-  },[selectedIndex]);
+    let selected = itemId === selectedId;
+    console.log(`selected? ${itemId} = ${selectedId}? ${selected}`)
+    setIsSelected(selected);
+  },[selectedId]);
 
   useEffect(() => {
     if (index !== undefined) {
@@ -24,7 +26,9 @@ const MyListItem = ({
   }, [index]);
 
   useEffect(() => {
-    if (isSelected) {
+    if (isSelected && isEven) {
+      setClassName('list-item selected-even');
+    } else if (isSelected) {
       setClassName('list-item selected');
     } else if (isEven) {
       setClassName('list-item even');
@@ -33,14 +37,12 @@ const MyListItem = ({
     }
   },[isEven, isSelected]);
 
-  useEffect(() => {
-    console.log(`class: `, className);
-    console.log('index: ', index);
-    console.log('isEven: ', isEven);
-  }, [className]);
+  const handleClick = () => {
+    setSelected(itemId);
+  }
 
   return (
-    <ListItem button className={className}>
+    <ListItem button className={className} onClick={handleClick}>
       {itemText}
     </ListItem>
   );

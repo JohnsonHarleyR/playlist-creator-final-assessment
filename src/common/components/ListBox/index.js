@@ -6,12 +6,35 @@ const ListBox = ({
   title,
   items,
   itemPropName,
+  selectedId,
   setSelected,
   leftOrRight,
 }) => {
 
   const [listItems, setListItems] = useState([]);
-  const [selectedIndex, setSelectedIndex] = useState(null);
+  // const [selectedIndex, setSelectedIndex] = useState(null);
+
+  // useEffect(() => {
+  //   if (selectedId !== undefined) {
+  //     if (selectedId === null && selectedIndex !== null) {
+  //       setSelectedIndex(null);
+  //     } else {
+  //       for (let i = 0; i < items.length; i++) {
+  //         if (selectedId === items[i].id) {
+  //           if (selectedIndex !== i) {
+  //             setSelectedIndex(i);
+  //           }
+  //           break;
+  //         }
+  //       }
+  //     }
+  //   }
+  // }, [selectedId]);
+
+  // const selectItem = (index) => {
+  //   let id = items[index].id;
+  //   setSelected(id);
+  // }
 
   useEffect(() => {
     if (items) {
@@ -21,16 +44,16 @@ const ListBox = ({
           <MyListItem 
             key={`${title}-item-${i}`}
             index={i}
-            selectedIndex={selectedIndex}
             itemText={item[itemPropName]}
             itemId={item.id}
             setSelected={setSelected}
+            selectedId={selectedId}
         />
         );
       });
       setListItems(newItems);
     }
-  }, [items]);
+  }, [items, selectedId]);
 
   return (
     <div className='creator-container inside'>
