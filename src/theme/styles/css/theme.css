@@ -90,7 +90,7 @@ body .app-container .creator-container {
   z-index: 2;
 }
 body .app-container .creator-container.inside {
-  margin-top: 1ch;
+  margin-top: 3ch;
   width: 100%;
 }
 body .app-container .creator-container .title-div {
@@ -130,7 +130,7 @@ body .app-container .creator-container .area-div.creator .middle {
   text-align: center;
   align-self: flex-start;
   height: 32ch;
-  margin-top: 3.91ch;
+  margin-top: 6ch;
 }
 body .app-container .creator-container .area-div.creator .middle .my-button {
   margin: 0.5ch 0;

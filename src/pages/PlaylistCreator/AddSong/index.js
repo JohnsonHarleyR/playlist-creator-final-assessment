@@ -1,4 +1,4 @@
-import { useRef, useState } from "react"
+import { useState } from "react"
 import TextInput from "../../../common/components/TextInput";
 import MyButton from "../../../common/components/MyButton";
 import { song } from "../../../common/resource/song-model";
@@ -7,7 +7,6 @@ const AddSong = ({
   addSong,
 }) => {
 
-  const inputRef = useRef();
   const [title, setTitle] = useState('');
 
   const createSong = () => {
@@ -18,8 +17,6 @@ const AddSong = ({
     if (title) {
       addSong(createSong());
       setTitle('');
-      console.log(inputRef.current.value);
-      inputRef.current.value = '';
     }
   }
 
@@ -27,8 +24,8 @@ const AddSong = ({
     <div className="add-song">
       <TextInput 
         placeholder={'Song title...'}
+        value={title}
         setValue={setTitle}
-        inputRef={inputRef}
       />
       <MyButton 
         text="Add"

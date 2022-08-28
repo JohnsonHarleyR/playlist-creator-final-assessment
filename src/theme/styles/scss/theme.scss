@@ -66,7 +66,6 @@ body {
       z-index: 1;
 
       .bg-icon {
-        // transform: rotate(20deg);
         width: 12.5ch;
         height: 12.5ch;
         fill: var(--primary-light);
@@ -104,7 +103,7 @@ body {
       z-index: 2;
 
       &.inside {
-        margin-top: 1ch;
+        margin-top: 3ch;
         width: 100%;
       }
 
@@ -140,7 +139,6 @@ body {
           }
 
           .left-side, .middle, .right-side {
-            // border: 1px solid white;
             height: 100%;
           }
 
@@ -157,7 +155,7 @@ body {
             text-align: center;
             align-self: flex-start;
             height: 32ch;
-            margin-top: 3.91ch;
+            margin-top: 6ch;
 
             .my-button {
               margin: .5ch 0;
@@ -213,7 +211,6 @@ body {
         z-index: 3;
 
         .list-item {
-          // background: var(--primary-light);
           position: relative;
           z-index: 5;
           &.even {

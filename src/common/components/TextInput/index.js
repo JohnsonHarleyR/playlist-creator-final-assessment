@@ -3,18 +3,17 @@ import { useEffect, useRef } from "react";
 
 const TextInput = ({
   placeholder,
+  value,
   setValue,
-  inputRef,
 }) => {
 
   const handleChange = (e) => {
-    console.log(inputRef.current.value);
     setValue(e.target.value);
   }
 
   return(
     <Input 
-      ref={inputRef}
+      value={value}
       className="text-input"
       placeholder={placeholder}
       onChange={handleChange}
