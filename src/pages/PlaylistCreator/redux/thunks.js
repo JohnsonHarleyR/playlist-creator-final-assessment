@@ -2,6 +2,17 @@ import { MusicList } from '../../../theme/constants/music';
 import { sortSongs } from '../../../common/helpers/song-helper';
 import actions from './actions';
 
+export const addItemToSongList = (newSong) => async(
+  dispatch,
+  getState
+) => {
+  let state = getState();
+  let allSongs = [...state.music.songList];
+  allSongs.push(newSong);
+  sortSongs(allSongs);
+  dispatch(actions.updateSongList(allSongs));
+}
+
 export const selectItemByIndex = (index, listType) => async(
   dispatch
 ) => {
@@ -62,4 +73,5 @@ export default {
   selectItemByIndex,
   addItemToPlayList,
   removeItemFromList,
+  addItemToSongList,
 };

@@ -58,7 +58,37 @@ body {
     justify-content: center;
     align-items: center;
 
+    .bg-icon-area {
+      display: flex;
+      position: absolute;
+      right: 1.6ch;
+      bottom: 1ch;
+      z-index: 1;
+
+      .bg-icon {
+        // transform: rotate(20deg);
+        width: 12.5ch;
+        height: 12.5ch;
+        fill: var(--primary-light);
+      }
+    }
+
+    .text-input {
+      background-color: var(--secondary-light);
+      height: 3.9ch;
+      color: var(--accent-extra-dark);
+      font-weight: bold;
+      border-radius: 5px;
+      font-family: 'Rubik';
+    }
+
     .my-button {
+      height: 4.75ch;
+      font-family: "Rubik";
+      font-size: 1.5ch;
+      text-transform: capitalize;
+      background: var(--accent-dark);
+      border-radius: 10px;
 
       .add-text {
         padding-right:3px;
@@ -71,11 +101,11 @@ body {
       justify-content: flex-start;
       align-items: center;
       position: relative;
+      z-index: 2;
 
       &.inside {
         margin-top: 1ch;
         width: 100%;
-
       }
 
       .title-div {
@@ -89,6 +119,25 @@ body {
         padding-top: 1.7ch;
 
         &.creator {
+
+          .add-song {
+
+            width: calc(var(--list-box-width) + .5ch) ;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: .5ch;
+
+            .text-input {
+              width: 18.2ch;
+            }
+          }
+
+          .left-side {
+            .add-song {
+              float: right;
+            }
+          }
 
           .left-side, .middle, .right-side {
             // border: 1px solid white;
@@ -113,12 +162,6 @@ body {
             .my-button {
               margin: .5ch 0;
               width: 14.5ch;
-              height: 4.75ch;
-              font-family: "Rubik";
-              font-size: 1.5ch;
-              text-transform: capitalize;
-              background: var(--accent-dark);
-              border-radius: 10px;
             }
           }
         }

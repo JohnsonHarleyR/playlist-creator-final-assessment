@@ -5,6 +5,7 @@ import MyButton from '../../common/components/MyButton';
 import { MusicThunks } from './redux';
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 import { MusicList } from '../../theme/constants/music';
+import AddSong from './AddSong';
 
 const PlaylistCreator = ({
   selectedIndex,
@@ -14,6 +15,7 @@ const PlaylistCreator = ({
   selectItemByIndex,
   addItemToPlayList,
   removeItemFromList,
+  addToSongList,
 }) => {
 
 
@@ -32,6 +34,9 @@ const PlaylistCreator = ({
               selectedIndex={selectedIndex}
               selectedList={selectedList}
               setSelected={selectItemByIndex}
+            />
+            <AddSong 
+              addSong={addToSongList}
             />
           </div>
           <div className='middle'>
@@ -60,7 +65,6 @@ const PlaylistCreator = ({
           </div>
         </AreaBox>
       </div>
-
     </div>
   );
 }
@@ -78,6 +82,7 @@ const mapDispatchToProps = {
   selectItemByIndex: MusicThunks.selectItemByIndex,
   addItemToPlayList: MusicThunks.addItemToPlayList,
   removeItemFromList: MusicThunks.removeItemFromList,
+  addToSongList: MusicThunks.addItemToSongList,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(PlaylistCreator);

@@ -50,6 +50,34 @@ body .app-container {
   justify-content: center;
   align-items: center;
 }
+body .app-container .bg-icon-area {
+  display: flex;
+  position: absolute;
+  right: 1.6ch;
+  bottom: 1ch;
+  z-index: 1;
+}
+body .app-container .bg-icon-area .bg-icon {
+  width: 12.5ch;
+  height: 12.5ch;
+  fill: var(--primary-light);
+}
+body .app-container .text-input {
+  background-color: var(--secondary-light);
+  height: 3.9ch;
+  color: var(--accent-extra-dark);
+  font-weight: bold;
+  border-radius: 5px;
+  font-family: "Rubik";
+}
+body .app-container .my-button {
+  height: 4.75ch;
+  font-family: "Rubik";
+  font-size: 1.5ch;
+  text-transform: capitalize;
+  background: var(--accent-dark);
+  border-radius: 10px;
+}
 body .app-container .my-button .add-text {
   padding-right: 3px;
 }
@@ -59,6 +87,7 @@ body .app-container .creator-container {
   justify-content: flex-start;
   align-items: center;
   position: relative;
+  z-index: 2;
 }
 body .app-container .creator-container.inside {
   margin-top: 1ch;
@@ -72,6 +101,19 @@ body .app-container .creator-container .title-div {
 }
 body .app-container .creator-container .area-div {
   padding-top: 1.7ch;
+}
+body .app-container .creator-container .area-div.creator .add-song {
+  width: calc(var(--list-box-width) + 0.5ch);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.5ch;
+}
+body .app-container .creator-container .area-div.creator .add-song .text-input {
+  width: 18.2ch;
+}
+body .app-container .creator-container .area-div.creator .left-side .add-song {
+  float: right;
 }
 body .app-container .creator-container .area-div.creator .left-side, body .app-container .creator-container .area-div.creator .middle, body .app-container .creator-container .area-div.creator .right-side {
   height: 100%;
@@ -93,12 +135,6 @@ body .app-container .creator-container .area-div.creator .middle {
 body .app-container .creator-container .area-div.creator .middle .my-button {
   margin: 0.5ch 0;
   width: 14.5ch;
-  height: 4.75ch;
-  font-family: "Rubik";
-  font-size: 1.5ch;
-  text-transform: capitalize;
-  background: var(--accent-dark);
-  border-radius: 10px;
 }
 body .app-container .creator-container .area-div.inside {
   width: 100%;

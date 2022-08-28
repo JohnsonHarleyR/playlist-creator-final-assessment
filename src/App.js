@@ -5,6 +5,7 @@ import { ThemeProvider } from '@mui/material/styles';
 import { createTheme} from "@mui/material/styles";
 import Palette from './theme/constants/palette';
 import PlaylistCreator from './pages/PlaylistCreator';
+import Headset from '@mui/icons-material/Headset';
 
 function App() {
 
@@ -24,19 +25,22 @@ function App() {
 
   return (
 <ThemeProvider theme={theme}>
-<Container
-        className="app-container"
-        maxWidth={false}
-        width={'100%'}
-        display={'flex'}
-        sx={{
-          backgroundColor: Palette.primary.main,
-          color: '#fff',
-          border: `5px solid ${Palette.secondary.main}`,
-        }}
-      >
-        <PlaylistCreator />
-      </Container>
+  <Container
+    className="app-container"
+    maxWidth={false}
+    width={'100%'}
+    display={'flex'}
+    sx={{
+      backgroundColor: Palette.primary.main,
+      color: '#fff',
+      border: `5px solid ${Palette.secondary.main}`,
+    }}
+  >
+    <PlaylistCreator />
+    <div className='bg-icon-area'>
+      <Headset className='bg-icon'/>
+    </div>
+  </Container>
 </ThemeProvider>
 
 
